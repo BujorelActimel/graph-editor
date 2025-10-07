@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Editor & Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="sidebar">
+        <h1>Graph Editor</h1>
+
+        <div class="controls">
+            <label>
+                <input type="checkbox" id="directed-checkbox">
+                Directed Graph
+            </label>
+        </div>
+
+        <h2>Input Format</h2>
+        <select id="format-select">
+            <option value="edge-list">Edge List</option>
+            <option value="adjacency-list">Adjacency List</option>
+            <option value="adjacency-matrix">Adjacency Matrix</option>
+        </select>
+
+        <h2>Text Input</h2>
+        <p class="info" id="format-info">Enter edges, one per line (e.g., "1 2" or "A B")</p>
+        <textarea id="graph-input" placeholder="Example:
+1 2
+2 3
+3 4"></textarea>
+
+        <div class="button-group">
+            <button id="parse-btn">Parse Graph</button>
+            <button id="clear-btn">Clear All</button>
+        </div>
+
+        <h2>Controls</h2>
+        <div class="info">
+            • <strong>Click empty space</strong>: Add node<br>
+            • <strong>Click node → Click another</strong>: Create edge<br>
+            • <strong>Drag node</strong>: Move node<br>
+            • <strong>Right click node</strong>: Delete node<br>
+            • <strong>Right click edge</strong>: Delete edge
+        </div>
+
+        <h2>Export</h2>
+        <select id="export-format">
+            <option value="image">Graph Image (PNG)</option>
+            <option value="edge-list">Edge List</option>
+            <option value="adjacency-list">Adjacency List</option>
+            <option value="adjacency-matrix">Adjacency Matrix</option>
+        </select>
+        <button id="export-btn">Export</button>
+    </div>
+
+    <div id="canvas-container">
+        <canvas id="graph-canvas"></canvas>
+    </div>
+
+    <script src="graph-editor.js"></script>
+</body>
+</html>
